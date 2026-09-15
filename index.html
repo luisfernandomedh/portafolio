@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Luis Fernando Medina Herrera - WhatsApp, LinkedIn y Constata en un toque.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#06080F">
+<meta name="theme-color" content="#FBFAF6">
 <meta property="og:title" content="Luis Fernando Medina Herrera">
 <meta property="og:description" content="AI &amp; Infrastructure Automation Engineer - Quito, Ecuador">
 <meta property="og:type" content="profile">
@@ -18,17 +18,20 @@
 <body>
 <style>
   :root {
-    color-scheme: dark;
+    color-scheme: light;
 
-    --void:      #06080F;
-    --ember:     #E9A23B;
-    --ember-hi:  #FFD08A;
-    --deep:      #1E4C6B;
-    --ink:       #F2F4F8;
-    --ink-soft:  rgba(242,244,248,.72);
-    --ink-faint: rgba(242,244,248,.40);
-    --rim:       rgba(255,255,255,.34);
-    --rim-low:   rgba(255,255,255,.10);
+    --paper:     #FBFAF6;  /* blanco cálido, base de todo */
+    --bone:      #ECE6D9;  /* hueso */
+    --sky:       #BBD4EA;  /* azul claro */
+    --sky-deep:  #7FA8CE;  /* azul claro, más saturado */
+    --azure:     #2E6FA8;  /* el único acento fuerte */
+    --azure-ink: #1F5686;  /* variante legible sobre cristal */
+
+    --ink:       #16293D;
+    --ink-soft:  rgba(22,41,61,.70);
+    --ink-faint: rgba(22,41,61,.52);
+    --rim:       rgba(255,255,255,.92);
+    --rim-low:   rgba(255,255,255,.45);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -36,7 +39,7 @@
   body {
     margin: 0;
     min-height: 100svh;
-    background: var(--void);
+    background: var(--paper);
     color: var(--ink);
     font-family: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -49,7 +52,7 @@
     inset: 0;
     z-index: 0;
     overflow: hidden;
-    background: var(--void);
+    background: var(--paper);
   }
 
   /* Muro de texto monoespaciado — lo que el cristal refracta */
@@ -61,14 +64,14 @@
     font-size: 13px;
     line-height: 2.05;
     letter-spacing: .02em;
-    color: rgba(150,172,205,.16);
+    color: rgba(46,78,114,.20);
     white-space: pre;
     user-select: none;
     transform: rotate(-11deg);
     animation: drift 90s linear infinite;
     will-change: transform;
   }
-  .lexicon b { color: rgba(233,162,59,.30); font-weight: 400; }
+  .lexicon b { color: rgba(46,111,168,.34); font-weight: 400; }
   @keyframes drift {
     from { transform: rotate(-11deg) translate3d(0, 0, 0); }
     to   { transform: rotate(-11deg) translate3d(-8%, -14%, 0); }
@@ -79,9 +82,10 @@
     position: absolute;
     inset: -20%;
     background:
-      radial-gradient(48% 38% at 18% 22%, rgba(233,162,59,.34), transparent 68%),
-      radial-gradient(52% 44% at 82% 74%, rgba(30,76,107,.62), transparent 70%),
-      radial-gradient(40% 30% at 62% 8%,  rgba(120,72,180,.20), transparent 72%);
+      radial-gradient(48% 38% at 18% 22%, rgba(187,212,234,.85), transparent 68%),
+      radial-gradient(52% 44% at 82% 74%, rgba(236,230,217,.95), transparent 70%),
+      radial-gradient(44% 34% at 66% 10%, rgba(127,168,206,.55), transparent 72%),
+      radial-gradient(38% 30% at 30% 88%, rgba(212,226,240,.80), transparent 74%);
     filter: blur(14px);
     animation: breathe 26s ease-in-out infinite alternate;
     will-change: transform;
@@ -91,11 +95,13 @@
     to   { transform: scale(1.14) translate3d(-3%, 2%, 0); }
   }
 
-  /* Viñeta: aprieta el foco hacia el panel */
+  /* Halo: aclara el centro para que el cristal recorte contra el papel */
   .vignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(70% 55% at 50% 45%, transparent 30%, rgba(6,8,15,.72) 100%);
+    background:
+      radial-gradient(64% 50% at 50% 46%, rgba(251,250,246,.62) 0%, transparent 72%),
+      radial-gradient(96% 80% at 50% 50%, transparent 52%, rgba(127,168,206,.26) 100%);
   }
 
   /* ============ Escenario ============ */
@@ -118,14 +124,15 @@
     isolation: isolate;
     /* tinte propio del vidrio — el módulo aporta refracción y desenfoque */
     background:
-      linear-gradient(152deg, rgba(255,255,255,.13) 0%, rgba(255,255,255,.05) 42%, rgba(255,255,255,.09) 100%);
+      linear-gradient(152deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.40) 44%, rgba(255,255,255,.55) 100%);
     box-shadow:
       inset 0 1px 0 var(--rim),
       inset 0 -1px 0 var(--rim-low),
-      inset 1px 0 0 rgba(255,255,255,.14),
-      inset -1px 0 0 rgba(255,255,255,.14),
-      0 2px 8px rgba(0,0,0,.28),
-      0 30px 70px -24px rgba(0,0,0,.78);
+      inset 1px 0 0 rgba(255,255,255,.62),
+      inset -1px 0 0 rgba(255,255,255,.62),
+      0 0 0 1px rgba(46,111,168,.10),
+      0 2px 8px rgba(35,70,110,.07),
+      0 30px 64px -26px rgba(35,70,110,.34);
     padding: 30px 28px 24px;
     display: flex;
     flex-direction: column;
@@ -137,8 +144,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(118deg, rgba(255,255,255,.22) 0%, transparent 34%);
-    mix-blend-mode: screen;
+    background: linear-gradient(118deg, rgba(255,255,255,.75) 0%, rgba(255,255,255,.12) 30%, transparent 46%);
     pointer-events: none;
     z-index: -1;
   }
@@ -157,14 +163,14 @@
   .beacon {
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--ember);
-    box-shadow: 0 0 0 0 rgba(233,162,59,.55);
+    background: var(--azure);
+    box-shadow: 0 0 0 0 rgba(46,111,168,.5);
     animation: pulse 2.8s ease-out infinite;
   }
   @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(233,162,59,.55); }
-    70%  { box-shadow: 0 0 0 9px rgba(233,162,59,0); }
-    100% { box-shadow: 0 0 0 0 rgba(233,162,59,0); }
+    0%   { box-shadow: 0 0 0 0 rgba(46,111,168,.5); }
+    70%  { box-shadow: 0 0 0 9px rgba(46,111,168,0); }
+    100% { box-shadow: 0 0 0 0 rgba(46,111,168,0); }
   }
 
   h1 {
@@ -176,7 +182,7 @@
     letter-spacing: -.035em;
     text-wrap: balance;
   }
-  h1 .b { display: block; color: var(--ember-hi); }
+  h1 .b { display: block; color: var(--azure); }
 
   .role {
     margin: 14px 0 0;
@@ -197,18 +203,18 @@
     border-radius: 16px;
     text-decoration: none;
     color: var(--ink);
-    background: rgba(255,255,255,.055);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.07);
+    background: rgba(255,255,255,.48);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 0 0 1px rgba(46,111,168,.13);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     transition: background .22s ease, transform .22s cubic-bezier(.22,.9,.3,1), box-shadow .22s ease;
   }
   .link:hover, .link:focus-visible {
-    background: rgba(255,255,255,.115);
+    background: rgba(255,255,255,.82);
     transform: translateY(-1px);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.14), 0 8px 22px -10px rgba(0,0,0,.8);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 0 0 1px rgba(46,111,168,.28), 0 10px 22px -12px rgba(35,70,110,.5);
   }
-  .link:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+  .link:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
   .link:active { transform: translateY(0) scale(.988); }
 
   .glyph {
@@ -217,7 +223,7 @@
     color: var(--ink-soft);
     transition: color .22s ease;
   }
-  .link:hover .glyph, .link:focus-visible .glyph { color: var(--ember-hi); }
+  .link:hover .glyph, .link:focus-visible .glyph { color: var(--azure-ink); }
   .glyph svg { width: 100%; height: 100%; display: block; }
 
   .text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
@@ -235,10 +241,10 @@
     margin-left: auto;
     flex: none;
     width: 15px; height: 15px;
-    color: rgba(242,244,248,.3);
+    color: rgba(22,41,61,.34);
     transition: transform .22s cubic-bezier(.22,.9,.3,1), color .22s ease;
   }
-  .link:hover .arrow, .link:focus-visible .arrow { transform: translate(3px, -3px); color: var(--ember-hi); }
+  .link:hover .arrow, .link:focus-visible .arrow { transform: translate(3px, -3px); color: var(--azure-ink); }
   .arrow svg { width: 100%; height: 100%; display: block; }
 
   /* ============ Pie ============ */
@@ -255,10 +261,10 @@
   .foot a {
     color: var(--ink-faint);
     text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,.14);
+    border-bottom: 1px solid rgba(46,111,168,.26);
     transition: color .2s ease, border-color .2s ease;
   }
-  .foot a:hover, .foot a:focus-visible { color: var(--ember-hi); border-color: var(--ember); }
+  .foot a:hover, .foot a:focus-visible { color: var(--azure-ink); border-color: var(--azure); }
 
   /* ============ Entrada ============ */
   .panel { animation: settle .85s cubic-bezier(.19,1,.22,1) both; }
