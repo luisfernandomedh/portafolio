@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Luis Fernando Medina Herrera - WhatsApp, LinkedIn y Constata en un toque.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#06080F">
+<meta property="og:title" content="Luis Fernando Medina Herrera">
+<meta property="og:description" content="AI &amp; Infrastructure Automation Engineer - Quito, Ecuador">
+<meta property="og:type" content="profile">
+<title>Credencial Luis Medina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+  :root {
+    color-scheme: dark;
+
+    --void:      #06080F;
+    --ember:     #E9A23B;
+    --ember-hi:  #FFD08A;
+    --deep:      #1E4C6B;
+    --ink:       #F2F4F8;
+    --ink-soft:  rgba(242,244,248,.72);
+    --ink-faint: rgba(242,244,248,.40);
+    --rim:       rgba(255,255,255,.34);
+    --rim-low:   rgba(255,255,255,.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--void);
+    color: var(--ink);
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ============ Fondo: su propio vocabulario, en deriva ============ */
+  .bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: var(--void);
+  }
+
+  /* Muro de texto monoespaciado — lo que el cristal refracta */
+  .lexicon {
+    position: absolute;
+    top: -30%; left: -30%;
+    width: 160%; height: 170%;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    line-height: 2.05;
+    letter-spacing: .02em;
+    color: rgba(150,172,205,.16);
+    white-space: pre;
+    user-select: none;
+    transform: rotate(-11deg);
+    animation: drift 90s linear infinite;
+    will-change: transform;
+  }
+  .lexicon b { color: rgba(233,162,59,.30); font-weight: 400; }
+  @keyframes drift {
+    from { transform: rotate(-11deg) translate3d(0, 0, 0); }
+    to   { transform: rotate(-11deg) translate3d(-8%, -14%, 0); }
+  }
+
+  /* Lavados de color: dan al prisma algo cromático que doblar */
+  .wash {
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(48% 38% at 18% 22%, rgba(233,162,59,.34), transparent 68%),
+      radial-gradient(52% 44% at 82% 74%, rgba(30,76,107,.62), transparent 70%),
+      radial-gradient(40% 30% at 62% 8%,  rgba(120,72,180,.20), transparent 72%);
+    filter: blur(14px);
+    animation: breathe 26s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  @keyframes breathe {
+    from { transform: scale(1)    translate3d(0, 0, 0); }
+    to   { transform: scale(1.14) translate3d(-3%, 2%, 0); }
+  }
+
+  /* Viñeta: aprieta el foco hacia el panel */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(70% 55% at 50% 45%, transparent 30%, rgba(6,8,15,.72) 100%);
+  }
+
+  /* ============ Escenario ============ */
+  .stage {
+    position: relative;
+    z-index: 1;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 6vw, 56px) 18px;
+  }
+
+  /* ============ El cristal ============ */
+  .panel {
+    width: 100%;
+    max-width: 29rem;
+    border-radius: 30px;
+    position: relative;
+    isolation: isolate;
+    /* tinte propio del vidrio — el módulo aporta refracción y desenfoque */
+    background:
+      linear-gradient(152deg, rgba(255,255,255,.13) 0%, rgba(255,255,255,.05) 42%, rgba(255,255,255,.09) 100%);
+    box-shadow:
+      inset 0 1px 0 var(--rim),
+      inset 0 -1px 0 var(--rim-low),
+      inset 1px 0 0 rgba(255,255,255,.14),
+      inset -1px 0 0 rgba(255,255,255,.14),
+      0 2px 8px rgba(0,0,0,.28),
+      0 30px 70px -24px rgba(0,0,0,.78);
+    padding: 30px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  /* destello especular en el hombro superior */
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(118deg, rgba(255,255,255,.22) 0%, transparent 34%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* ============ Identidad ============ */
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .beacon {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 0 0 rgba(233,162,59,.55);
+    animation: pulse 2.8s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(233,162,59,.55); }
+    70%  { box-shadow: 0 0 0 9px rgba(233,162,59,0); }
+    100% { box-shadow: 0 0 0 0 rgba(233,162,59,0); }
+  }
+
+  h1 {
+    margin: 12px 0 0;
+    font-family: "Bricolage Grotesque", "Instrument Sans", sans-serif;
+    font-size: clamp(2.7rem, 13vw, 3.9rem);
+    font-variation-settings: "opsz" 72, "wght" 700;
+    line-height: .88;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+  h1 .b { display: block; color: var(--ember-hi); }
+
+  .role {
+    margin: 14px 0 0;
+    font-size: .94rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 32ch;
+  }
+
+  /* ============ Enlaces ============ */
+  .links { display: flex; flex-direction: column; gap: 9px; }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--ink);
+    background: rgba(255,255,255,.055);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.07);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: background .22s ease, transform .22s cubic-bezier(.22,.9,.3,1), box-shadow .22s ease;
+  }
+  .link:hover, .link:focus-visible {
+    background: rgba(255,255,255,.115);
+    transform: translateY(-1px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.14), 0 8px 22px -10px rgba(0,0,0,.8);
+  }
+  .link:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+  .link:active { transform: translateY(0) scale(.988); }
+
+  .glyph {
+    flex: none;
+    width: 21px; height: 21px;
+    color: var(--ink-soft);
+    transition: color .22s ease;
+  }
+  .link:hover .glyph, .link:focus-visible .glyph { color: var(--ember-hi); }
+  .glyph svg { width: 100%; height: 100%; display: block; }
+
+  .text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .text .t1 { font-size: .98rem; font-weight: 600; letter-spacing: -.012em; }
+  .text .t2 {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .arrow {
+    margin-left: auto;
+    flex: none;
+    width: 15px; height: 15px;
+    color: rgba(242,244,248,.3);
+    transition: transform .22s cubic-bezier(.22,.9,.3,1), color .22s ease;
+  }
+  .link:hover .arrow, .link:focus-visible .arrow { transform: translate(3px, -3px); color: var(--ember-hi); }
+  .arrow svg { width: 100%; height: 100%; display: block; }
+
+  /* ============ Pie ============ */
+  .foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 4px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+  }
+  .foot a {
+    color: var(--ink-faint);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .foot a:hover, .foot a:focus-visible { color: var(--ember-hi); border-color: var(--ember); }
+
+  /* ============ Entrada ============ */
+  .panel { animation: settle .85s cubic-bezier(.19,1,.22,1) both; }
+  @keyframes settle {
+    from { opacity: 0; transform: translateY(18px) scale(.975); }
+    to   { opacity: 1; transform: none; }
+  }
+  .rise { opacity: 0; animation: rise .6s cubic-bezier(.22,.9,.3,1) forwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+  .r1 { animation-delay: .22s; } .r2 { animation-delay: .30s; }
+  .r3 { animation-delay: .38s; } .r4 { animation-delay: .46s; }
+  .r5 { animation-delay: .54s; } .r6 { animation-delay: .62s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lexicon, .wash, .beacon, .panel { animation: none; }
+    .rise { animation: none; opacity: 1; }
+    .link, .glyph, .arrow { transition: none; }
+  }
+
+  @media (max-width: 380px) {
+    .panel { padding: 26px 20px 20px; border-radius: 26px; }
+  }
+</style>
+
+<div class="bg" aria-hidden="true">
+  <div class="lexicon" id="lexicon"></div>
+  <div class="wash"></div>
+  <div class="vignette"></div>
+</div>
+
+<main class="stage">
+  <article class="panel" id="panel">
+
+    <header>
+      <div class="eyebrow rise r1"><span class="beacon"></span>Quito · UTC−5 · abierto a remoto</div>
+      <h1 class="rise r1">Luis<span class="b">Medina</span></h1>
+      <p class="role rise r2">Ingeniero de automatización en IA e infraestructura. Cinco años construyendo seguridad y flujos agénticos dentro de un SaaS.</p>
+    </header>
+
+    <nav class="links" aria-label="Contacto">
+      <a class="link rise r3" href="https://wa.me/593995864348">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.24 8.25c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.06s.89 2.39 1.01 2.55c.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg></span>
+        <span class="text"><span class="t1">WhatsApp</span><span class="t2">+593 99 586 4348</span></span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+
+      <a class="link rise r4" href="https://www.linkedin.com/in/luis-fernando-medina-herrera">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-.96 1.83-1.98 3.77-1.98 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.78c0-1.38-.03-3.15-1.98-3.15-1.98 0-2.28 1.5-2.28 3.05V21h-4V9Z"/></svg></span>
+        <span class="text"><span class="t1">LinkedIn</span><span class="t2">/in/luis-fernando-medina-herrera</span></span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+
+      <a class="link rise r5" href="https://www.constata.dev">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.9 4.7 5.9v5.4c0 4.3 2.9 8.3 7.3 9.7 4.4-1.4 7.3-5.4 7.3-9.7V5.9L12 2.9Z"/><path d="m9.2 11.9 2 2 3.7-3.9"/></svg></span>
+        <span class="text"><span class="t1">Constata</span><span class="t2">Detector de estafas · gratis y open source</span></span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+
+      <a class="link rise r6" href="luis-medina.vcf" download>
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2v11"/><path d="m7.6 10.4 4.4 4.4 4.4-4.4"/><path d="M4.6 19.4h14.8"/></svg></span>
+        <span class="text"><span class="t1">Guardar contacto</span><span class="t2">Ficha .vcf para tu agenda</span></span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+    </nav>
+
+    <footer class="foot rise r6" style="animation-delay:.70s">
+      <a href="mailto:luisfernandomedhe@gmail.com">luisfernandomedhe@gmail.com</a>
+      <span>EC</span>
+    </footer>
+
+  </article>
+</main>
+
+<script src="liquid-glass.js"></script>
+<script>
+  // El fondo es su propio vocabulario técnico: lo que el cristal refracta
+  // es el material del que está hecho el perfil, no una textura decorativa.
+  (function buildLexicon() {
+    var words = [
+      "claude api","mcp server","rag","agentic workflows","soc 2 type 2","iso 27001",
+      "entra id","sso/saml","rbac","intune","aws fargate","lambda","s3","cloudfront",
+      "docker","kubernetes","github actions","python","powershell","siem","soar","dlp",
+      "incident response","threat modeling","pentesting","hackthebox","llm classification",
+      "document q&a","identity governance","10k+ endpoints","google workspace","n8n",
+      "constata.dev","quito, ec","kriptos","five years","promoted x4"
+    ];
+    var line = [], out = [], i = 0;
+    for (var r = 0; r < 46; r++) {
+      line.length = 0;
+      for (var c = 0; c < 9; c++) {
+        var w = words[(i * 7 + r * 3 + c) % words.length];
+        i++;
+        line.push(((r + c) % 6 === 0) ? "<b>" + w + "</b>" : w);
+      }
+      out.push(line.join("   ·   "));
+    }
+    document.getElementById("lexicon").innerHTML = out.join("\n");
+  })();
+
+  // Refracción de cristal líquido en el borde del panel.
+  // Interior legible: scale moderado, blur alto, borde ancho.
+  var panel = document.getElementById("panel");
+  var glass = liquidGlass(panel, {
+    scale: -96,
+    chroma: 7,
+    border: 0.1,
+    mapBlur: 14,
+    blur: 9,
+    saturate: 1.7,
+    fallbackBlur: 22
+  });
+  if (!glass.supported) panel.classList.add("frosted");
+</script>
+
+</body>
+</html>
