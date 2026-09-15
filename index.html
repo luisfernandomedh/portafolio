@@ -247,6 +247,70 @@
   .link:hover .arrow, .link:focus-visible .arrow { transform: translate(3px, -3px); color: var(--azure-ink); }
   .arrow svg { width: 100%; height: 100%; display: block; }
 
+  /* ============ QR a la mano ============ */
+  .qr-btn {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  dialog.qr {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: min(88vw, 23rem);
+    color: var(--ink);
+  }
+  dialog.qr::backdrop {
+    background: rgba(22,41,61,.44);
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(9px);
+  }
+  .qr-sheet {
+    border-radius: 28px;
+    padding: 22px 22px 18px;
+    background: rgba(255,255,255,.9);
+    box-shadow:
+      inset 0 1px 0 var(--rim),
+      0 0 0 1px rgba(46,111,168,.14),
+      0 26px 60px -22px rgba(35,70,110,.6);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    backdrop-filter: blur(20px) saturate(1.6);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+  .qr-sheet img {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+    image-rendering: pixelated; /* bordes limpios al ampliar: mejora la lectura */
+  }
+  .qr-sheet p {
+    margin: 0;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-align: center;
+    line-height: 1.5;
+  }
+  .qr-close {
+    font: inherit;
+    font-weight: 600;
+    font-size: .9rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 12px;
+    padding: 9px 22px;
+    color: #fff;
+    background: var(--azure);
+    transition: background .2s ease;
+  }
+  .qr-close:hover, .qr-close:focus-visible { background: var(--azure-ink); }
+
   /* ============ Pie ============ */
   .foot {
     display: flex;
@@ -323,6 +387,12 @@
         <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
       </a>
 
+      <button class="link qr-btn rise r6" id="qr-open" type="button">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M14 14h3v3h-3zM20.5 14v3M17.5 20.5h3M14 20.5h.01"/></svg></span>
+        <span class="text"><span class="t1">Mostrar mi QR</span><span class="t2">Para que lo escaneen desde tu pantalla</span></span>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></svg></span>
+      </button>
+
       <a class="link rise r6" href="luis-medina.vcf" download>
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2v11"/><path d="m7.6 10.4 4.4 4.4 4.4-4.4"/><path d="M4.6 19.4h14.8"/></svg></span>
         <span class="text"><span class="t1">Guardar contacto</span><span class="t2">Ficha .vcf para tu agenda</span></span>
@@ -330,13 +400,20 @@
       </a>
     </nav>
 
-    <footer class="foot rise r6" style="animation-delay:.70s">
+    <footer class="foot rise r6" style="animation-delay:.78s">
       <a href="mailto:luisfernandomedhe@gmail.com">luisfernandomedhe@gmail.com</a>
       <span>EC</span>
     </footer>
 
   </article>
 </main>
+<dialog class="qr" id="qr-dialog" aria-label="Codigo QR de mi tarjeta">
+  <div class="qr-sheet">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA9QAAAPUAQMAAAB2GuPHAAAABlBMVEUWKT37+va9ZPdvAAAEmUlEQVR42u3dTW7cMAwGUKEX0P1v6RtMgWJS/ZFOLBsJij4vgtgz9lvM5oMskuX1Y8dR2Gw2m81ms9lsNpvNZrPZbDabzWaz2Ww2m81ms9lsNpvNfr3KfNTua8NpuzYc76fU/o6zh/4qP3ew2Ww2m81m/yv2kNeGRNZO+zD2579jfMDx989HkGsPSB8qr7HZbDabzWZv5bX31SlpHWNea9eihbcp6+UP9Xuz2Ww2m81mP5DXptWyMi6oJWtp8hqbzWaz2Wz2N+W1OL4d8VvQ/stliXnyGpvNZrPZbPYTeW05PbK8NhUiROtwL/vX2Gw2m81msx/Na9NR+/ec23/Wh8prbDabzWaz2Vt5LTqmzDVVGUwfTEtrn/YS8Xuz2Ww2m81mX89r7dr785pdq/2utTTcRU095DU2m81ms9nszbyWtMXtY1na2WMtIZ3CXTuV19hsNpvNZrO38toUwfqANgS5/t7jpF/u8la1Wl9js9lsNpvNvpPXokW2tJFaHMtKVr8Q3SGvsdlsNpvNZl/La8sK2tQgN31Hmo4TXft+eB/KZrPZbDabvZ/X0ma4J905SjDfIHozegTt2OQ1NpvNZrPZ7Gt5rb92BImsxKtl7y+dzaOayg/kNTabzWaz2eytvBaVGvRHjXt8xCty0x0h5Pdms9lsNpvNvpTXpmsttMVt1qJ3pDWrPFBvwGaz2Ww2m/1QXjvvxJE29Yimi06Bz/oam81ms9ls9s28tmxOK/1/UQvcqNSgPTQaJyqvsdlsNpvNZu/ntaEWIOjTMU2minLYutIW3SGvsdlsNpvNZm/ltaW5WvqKc2rRUbK2HcNT5DU2m81ms9ns23kt7LoRLJSV8bTGQ0T77+nnwWaz2Ww2m/1YXlsHUMUt1dLbWiw7ltBm/xqbzWaz2Wz2zbyWpq+48mD4NFpfW+ZWyWtsNpvNZrPZu3ltiWBJNjuvCo17d4Q1DX5vNpvNZrPZ7It57byH2vmI0bKUKfQJT70Bm81ms9ls9v28FnXJjRbUlgKDFste2a619U2rvMZms9lsNpt9Pa8dwX6zdCRoXdp2RNMP4lFU8hqbzWaz2Wz2Rl5rp33Sei3dOaIcFuW1ZaXN/jU2m81ms9nsW3ntrJSzT2knUw1ey4CEltz082Cz2Ww2m82+mdfihmtTWUHNxk6lTT28D2Wz2Ww2m81+KK/Fy2NJvUFcktCO6SstuclrbDabzWaz2ft5rS2UDZ+eRLUpm50f8hqbzWaz2Wz2zbz2SX/bbJJoUnmQTkmQ19hsNpvNZrO38try0bqd7Qu71qJP401s8hqbzWaz2Wz21bxW46W15d1nyZp1lKy9Rw3qSOU1NpvNZrPZ7I281seytRY0XmQrQXPdGpcfWF9js9lsNpvNfjavpY052r3ppIOTWVbyGpvNZrPZbPaTeW3pl7veu25OCybEm2/AZrPZbDabfT+vxfvXypi5huQ2RbUvTIiX19hsNpvNZrM389p01C82ZhvuSJfgplN5jc1ms9lsNvtqXvvu42Cz2Ww2m81ms9lsNpvNZrPZbDabzWaz2Ww2m81ms9ls9v9r/waizNd1GnvEwAAAAABJRU5ErkJggg==" alt="Codigo QR que abre esta tarjeta de contacto" width="980" height="980">
+    <p>Apunta la camara<br>luisfernandomedh.github.io/portafolio</p>
+    <button class="qr-close" id="qr-close" type="button">Cerrar</button>
+  </div>
+</dialog>
 
 <script src="liquid-glass.js"></script>
 <script>
@@ -377,6 +454,14 @@
     fallbackBlur: 22
   });
   if (!glass.supported) panel.classList.add("frosted");
+
+  // El QR vive dentro de la propia tarjeta: sacar el telefono y que lo escaneen
+  // es el camino mas corto cuando no hay etiqueta NFC a mano.
+  var dlg = document.getElementById("qr-dialog");
+  document.getElementById("qr-open").addEventListener("click", function () { dlg.showModal(); });
+  document.getElementById("qr-close").addEventListener("click", function () { dlg.close(); });
+  // tocar fuera de la hoja tambien cierra
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 </script>
 
 </body>
